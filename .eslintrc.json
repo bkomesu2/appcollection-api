@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "tsconfig.eslint.json",
+    "tsconfigRootDir": "server"
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
+  "ignorePatterns": ["dist"],
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "options" }
+    ],
+    "import/extensions": ["error", "never", { "js": "always" }],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [["^\\u0000", "^@?\\w", "^[^.]", "^\\."]]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "leadingUnderscore": "allow"
+      }
+    ]
+  }
+}
